@@ -1,6 +1,6 @@
 # CMV_MapRefreshTimer_Widget
 # Map Refresh Timer Widget
-A widget for CMV (http://cmv.io/). It refreshes the map layers periodically. You can set the preferred map layers and the refresh timer interval.
+A widget for CMV (http://cmv.io/). It refreshes the map layers periodically. You can set the preferred map layers and the refresh timer interval. When the timer in up left corner is green, the refresh timer is running. By clicking on it, the refresh timer turns off and red. To start the refresh timer, click on it again.
 
 ![alt tag](https://github.com/vojvod/CMV_MapRefreshTimer_Widget/blob/master/img.jpg)
 
