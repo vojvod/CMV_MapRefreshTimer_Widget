@@ -3,19 +3,13 @@ define([
     'dijit/_WidgetBase',
     'dijit/_TemplatedMixin',
     'dijit/_WidgetsInTemplateMixin',
-    'dojo/_base/lang',
-    'dojo/on',
     'dojo/dom-attr',
-    'dojo/dom-construct',
     'dojo/_base/array',
-    'dijit/form/Button',
     'dojox/timing',
     'dojo/text!./Timer/templates/Timer.html',
-    'dojo/i18n!./Timer/nls/resource',
-    'dojo/topic',
-    'xstyle/css!./Timer/css/Timer.css'
-], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, lang, on, domAttr,
-             domConst, array, Button, timing, TimerTemplate, i18n, topic, css) {
+    'dojo/i18n!./Timer/nls/resource'
+], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, domAttr,
+             array, timing, TimerTemplate, i18n) {
     return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
         widgetsInTemplate: true,
         templateString: TimerTemplate,
@@ -31,21 +25,21 @@ define([
             time.onTick = function() {
                 var now = new Date();
                 if(t.enable){
-                    t.timerDIV.innerHTML = now.getHours() + ':' + now.getMinutes() + ":" + now.getSeconds();
+                    t.timerDIV.innerHTML = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
                     array.forEach(t.layerIDsForRefresh, function(layerID){
                         var layer = t.map.getLayer(layerID);
                         layer.refresh();
                     });
                 }
-            }
+            },
             time.onStart = function() {
                 t.enable = true;
                 var now = new Date();
-                t.timerDIV.innerHTML = now.getHours() + ':' + now.getMinutes() + ":" + now.getSeconds();
-            }
+                t.timerDIV.innerHTML = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+            },
             time.onStop = function() {
                 t.enable = false;
-            }
+            },
             time.start();
 
         },
