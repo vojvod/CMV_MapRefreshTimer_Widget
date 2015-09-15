@@ -29,7 +29,7 @@ widgets: {
 ```
 Copy Timer folder and Timer.js to folder gis/dijit/ at your CMV installation.
 
-Modify js\viewer\templates\mapOverlay.html file.
+Modify js/viewer/templates/mapOverlay.html file.
 ```javascript
 ...
 	<div style="position:absolute;top:20px;right:25px;z-index:40;">
