@@ -25,7 +25,7 @@ define([
             time.onTick = function() {
                 var now = new Date();
                 if(t.enable){
-                    t.timerDIV.innerHTML = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+                    t.timerDIV.innerHTML = ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2) + ':' + ('0' + now.getSeconds()).slice(-2);
                     array.forEach(t.layerIDsForRefresh, function(layerID){
                         var layer = t.map.getLayer(layerID);
                         layer.refresh();
@@ -35,7 +35,7 @@ define([
             time.onStart = function() {
                 t.enable = true;
                 var now = new Date();
-                t.timerDIV.innerHTML = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+                t.timerDIV.innerHTML = ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2) + ':' + ('0' + now.getSeconds()).slice(-2);
             },
             time.onStop = function() {
                 t.enable = false;
